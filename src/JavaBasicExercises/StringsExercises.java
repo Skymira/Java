@@ -19,5 +19,6 @@ public class StringsExercises {
     String again = "PHP Exercises and Pyhton Exercises";
     String str3 = "and";
     System.out.println(again.contains(str3));
+    System.out.println("train git");
     }
 }
