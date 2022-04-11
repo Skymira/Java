@@ -1,11 +1,12 @@
 package JavaBasicExercises;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Serious {
 
     // https://techstudy.org/java/java-program-examples-with-output/
-    //20 done
+    //22 done
     public static void main(String[] args) {
         //System.out.println(sum(3,6));
         //System.out.println(prod(3,4));
@@ -24,6 +25,10 @@ public class Serious {
         //even();
         // stringToInt();
         // convertToHour();
+       // countArrEvenOdd();
+       // squareRoot();
+       // swapArr();
+        palindrome(101);
         int sum = 1;
         int ctr = 0;
         int num = 0;
@@ -39,6 +44,12 @@ public class Serious {
             }
         }
         System.out.println("\nSum of the first 100 prime numbers is: "+sum);
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a integer: ");
+        int numm = in.nextInt();
+        System.out.printf("Is %d is a palindrome number?\n",numm);
+        System.out.println(palindrome(numm));
 
 
     }
@@ -205,8 +216,73 @@ public class Serious {
         return true;
     }
 
+    public static void swapArr(){
+        int [] arr = {1,2,3};
+        System.out.println(Arrays.toString(arr));
+        int temp = arr[0];
+        arr[0] = arr[arr.length-1];
+        arr[arr.length-1] = temp;
+        System.out.println(Arrays.toString(arr));
 
-}
+    }
+    public static void countArrEvenOdd(){
+        int [] arr = {1, 2, 3, 4, 5, 6};
+        int countEven = 0;
+        int countOdd = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(i % 2 == 0){
+                countEven++;
+            } else {
+                countOdd++;
+            }
+        }
+        System.out.println("Even: "+countEven);
+        System.out.println("Odd: "+countOdd);
+    }
+    public static void squareRoot(){
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b = 0;
+        int c = 0;
+        if (a == 0 || a == 1){
+            System.out.println("Doesnt have a square root");
+        }
+
+        for (int i = 0; i < a; i++) {
+            b++;
+            c++;
+            if( b * c == a){
+                System.out.println("Square root of: "+a+" is equal to: "+b);
+                break;
+            }
+
+
+
+        }
+
+
+
+
+    }
+
+    private static boolean palindrome(int numm) {
+        String str = String.valueOf(numm);
+        int i = 0;
+        int j = str.length() - 1;
+        while (i < j) {
+            if (str.charAt(i++) != str.charAt(j--)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    }
+
+
+
+
+
+
 
 
 
